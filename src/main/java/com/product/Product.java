@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 
 @Entity
@@ -26,8 +27,7 @@ public class Product {
 
 	@Column(nullable = true)
 	@ElementCollection(fetch = FetchType.EAGER)
-
-	private List<String> tags;
+	private Set<String> tags;
 
 	@NotNull
 	@ElementCollection(fetch = FetchType.EAGER)
@@ -46,7 +46,7 @@ public class Product {
 	 * @param tags
 	 * @param prices
      */
-    public Product(String name, String description, List tags, Map<String, BigDecimal> prices) {
+    public Product(String name, String description, Set tags, Map<String, BigDecimal> prices) {
 		this.name = name;
 		this.description = description;
 		this.tags = tags;
@@ -66,7 +66,7 @@ public class Product {
 		return description;
 	}
 
-	public List<String> getTags() {
+	public Set<String> getTags() {
 		return tags;
 	}
 

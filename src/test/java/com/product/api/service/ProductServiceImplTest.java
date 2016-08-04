@@ -11,18 +11,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import java.util.*;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=ProductApplication.class)
 public class ProductServiceImplTest {
     private Map prices;
-    private List tags;
+    private Set tags;
 
     @Autowired
     private ProductService productService;
@@ -35,11 +31,9 @@ public class ProductServiceImplTest {
         prices.put("USD",new BigDecimal(1.23));
         prices.put("Pounds",new BigDecimal(0.89));
 
-        tags = new ArrayList();
+        tags = new HashSet();
         tags.add("waterpoorf");
         tags.add("huge");
-
-
 
     }
 
@@ -57,13 +51,9 @@ public class ProductServiceImplTest {
 
     @Test
     public void getProducts() throws Exception {
-        Product productAdded = productService.add(new Product("name", "description", tags, prices));
-        Iterable<Product> products = productService.getProducts();
+        List<Product> products = productService.getProducts();
 
-        List<Product> productsListed = new ArrayList<>();
-        products.forEach(productsListed::add);
-
-        Assert.assertEquals(productsListed.size(),2);
+        Assert.assertEquals(products.size(),2);
 
     }
 

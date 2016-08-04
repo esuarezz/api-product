@@ -1,6 +1,7 @@
 package com.product.api;
 
 import com.product.Product;
+import com.product.api.exception.ProductNotFoundException;
 import com.product.api.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,7 +29,6 @@ public class ProductApi {
 	@ResponseBody
 	@ResponseStatus(HttpStatus.CREATED)
 	public Product add(@Valid @RequestBody Product product) {
-
 		return productService.add(product);
 	}
 
