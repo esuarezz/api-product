@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Map;
 
 
@@ -32,7 +33,6 @@ public class ProductApi {
 	}
 
 
-	//If is not defined the product, return CREATED
 	@RequestMapping(method= RequestMethod.PUT,value = "/{id}")
 	@ResponseBody
 	@ResponseStatus(HttpStatus.OK)
@@ -54,7 +54,7 @@ public class ProductApi {
 	@RequestMapping(method= RequestMethod.GET)
 	@ResponseBody
 	@ResponseStatus(HttpStatus.OK)
-	public Iterable<Product> getProducts() {
+	public List<Product> getProducts() {
 
 		return productService.getProducts();
 	}
@@ -67,7 +67,6 @@ public class ProductApi {
 
 		return productService.getProductBy(id);
 	}
-
 
 
 }

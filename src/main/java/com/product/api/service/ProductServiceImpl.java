@@ -36,7 +36,9 @@ public class ProductServiceImpl implements ProductService {
 
 
     /**
-     * Adds the product if it is not in the database, if not throws a custom exception
+     * Adds the product if it is not in the database, we would check by name (with constraints)
+     * In this domain is done in this way, but for example in online shops you keep all of them
+     * because they are from different users. If we have one with name created we will thrown a custom exception
      * @param product
      * @return
      */
