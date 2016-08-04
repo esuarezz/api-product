@@ -16,6 +16,7 @@ import java.util.Map;
 /**
  * Service to isolate the different layers, not really really necesarry because we could call from the api to the repo
  * directly, but I want to keep isolated the implementation from the api, keeping a better clean code
+ * In this domain if we save and its created its ok, and just replace it, simple implementation
  */
 
 
@@ -35,11 +36,13 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.save(product);
     }
 
+    //TODO:Implement
     @Override
     public Product update(long id, Product product) {
         return null;
     }
 
+    //TODO:Implement
     @Override
     public Product setPrice(long id, Map<String, BigDecimal> prices) {
         return null;
@@ -53,6 +56,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProductBy(long id) {
         Product productFound = productRepository.findOne(id);
+
         if(productFound==null){
             throw new ProductNotFoundException();
         }
