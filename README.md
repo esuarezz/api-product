@@ -2,24 +2,24 @@ Some products are added by default.
 Basic Entity Product representation cause we are using embedded database
  
 Example Json schema used:
-` {  
-     "name":"name",
-     "description":"desc",
-     "tags":[  
+
+`"name": "name",
+    "description": "desc",
+     "tags": [
          "tag1",
          "tag12"
      ],
-     "prices":{  
-         "USD":2,
-         "Euro":2.40
+     "prices": {
+         "USD": 2,
+         "Euro": 2.40
      }
  }`
-          
+         
           
 API:
 
 Add a new product:
-   ** POST [/api/v1/products/]() **
+** POST [/api/v1/products/]() **
    Response HTTP -> Created if it was successful,
    Response HTTP -> Conflict if a element was in the database with same name
    
