@@ -41,8 +41,9 @@ Get all products
    Response HTTP -> OK, List of products will be returned,
     it could be empty
 
-Get a specific product by id
+Get a specific product by id             
    **GET [/api/v1/products/{id}]()**
    Response HTTP -> OK, product will be returned
-   Response HTTP -> Not found, it was not in the database the product 
+   Response HTTP -> Not found, it was not in the database the product
+ 
    
