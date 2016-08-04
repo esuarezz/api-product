@@ -19,19 +19,19 @@ Example Json schema used:
 API:
 
 Add a new product:
-** POST [/api/v1/products/]() **
+   **POST [/api/v1/products/]()**
    Response HTTP -> Created if it was successful,
    Response HTTP -> Conflict if a element was in the database with same name
    
  
 Update a product:            
-   ** PUT [/api/v1/products/{id}]() **    
+   **PUT [/api/v1/products/{id}]()**    
    Response HTTP -> OK, it was updated successfully             
    Response HTTP -> Not found, it was not in the database the product 
             
                
 Set a price for product:       
-   **PUT [/api/v1/products/{id}/price]() **
+   **PUT [/api/v1/products/{id}/price]()**
    Response HTTP -> OK, it was updated successfully             
    Response HTTP -> Not found, it was not in the database the product 
 
