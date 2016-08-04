@@ -3,7 +3,7 @@ Basic Entity Product representation cause we are using embedded database
  
 Example Json schema used:
 
-`"name": "name",
+`{"name": "name",
     "description": "desc",
      "tags": [
          "tag1",
