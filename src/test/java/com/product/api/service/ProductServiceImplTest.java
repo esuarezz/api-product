@@ -2,10 +2,13 @@ package com.product.api.service;
 
 import com.product.Product;
 import com.product.ProductApplication;
+import com.product.api.exception.ProductNotFoundException;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -16,6 +19,7 @@ import java.util.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=ProductApplication.class)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ProductServiceImplTest {
     private Map prices;
     private Set tags;
@@ -53,10 +57,19 @@ public class ProductServiceImplTest {
     public void getProducts() throws Exception {
         List<Product> products = productService.getProducts();
 
-        Assert.assertEquals(products.size(),2);
+        Assert.assertEquals(products.size(),1);
 
     }
 
+    @Test
+    public void getProductByOk() throws Exception {
+        Assert.assertNotNull(productService.getProductBy(1));
+    }
+
+    @Test(expected = ProductNotFoundException.class)
+    public void getProductByNotFoundException() throws Exception {
+        Assert.assertNotNull(productService.getProductBy(12l));
+    }
 
     @Test
     public void update() throws Exception {
@@ -68,10 +81,6 @@ public class ProductServiceImplTest {
 
     }
 
-    @Test
-    public void getProductBy() throws Exception {
-
-    }
 
 
 }
