@@ -18,11 +18,7 @@ Example Json schema used:
           
 API:
 
-Add a new product:
-   **POST [/api/v1/products/]()**
-   Response HTTP -> Created if it was successful,
-   Response HTTP -> Conflict if a element was in the database with same name
-   
+
 Add a new product:            
    **POST [/api/v1/products/]()**    
    Response HTTP -> Created if it was successful,             
