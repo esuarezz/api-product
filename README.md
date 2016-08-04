@@ -2,7 +2,7 @@ Some products are added by default.
 Basic Entity Product representation cause we are using embedded database
  
 Example Json schema used:
-~~` {  
+` {  
      "name":"name",
      "description":"desc",
      "tags":[  
@@ -13,7 +13,7 @@ Example Json schema used:
          "USD":2,
          "Euro":2.40
      }
- }`~~
+ }`
           
           
 API:
