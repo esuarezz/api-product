@@ -37,10 +37,11 @@ Set a price for product:
 
 Get all products             
    GET /api/v1/products
-   Response HTTP -> OK , List of products will be returned, it could be empty
+   Response HTTP -> OK , List of products will be returned,
+    it could be empty
 
 Get a specific product by id
    GET /api/v1/products/{id}
-   Response HTTP -> OK , List of products will be returned, it could be empty  
+   Response HTTP -> OK , product will be returned
    Response HTTP -> Not found , it was not in the database the product 
    
