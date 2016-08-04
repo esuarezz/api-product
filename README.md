@@ -28,18 +28,19 @@ Update a product:
    PUT /api/v1/products/{id}    
    Response HTTP -> OK , it was updated successfully             
    Response HTTP -> Not found , it was not in the database the product 
+            
                
 Set a price for product:       
-
-PUT /api/v1/products/{id}/price
+   PUT /api/v1/products/{id}/price
    Response HTTP -> OK , it was updated successfully             
    Response HTTP -> Not found , it was not in the database the product 
 
-                 
-GET /api/v1/products
+Get all products             
+   GET /api/v1/products
    Response HTTP -> OK , List of products will be returned, it could be empty
 
-GET /api/v1/products/{id}
+Get a specific product by id
+   GET /api/v1/products/{id}
    Response HTTP -> OK , List of products will be returned, it could be empty  
    Response HTTP -> Not found , it was not in the database the product 
    
