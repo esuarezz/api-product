@@ -1,12 +1,10 @@
 package com.product;
 
-import org.springframework.hateoas.config.EnableEntityLinks;
-import org.springframework.hateoas.core.Relation;
+
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -18,7 +16,8 @@ public class Product {
 	@Id @GeneratedValue
 	private Long id;
 
-	@Column @NotNull
+	@NotNull
+	@Column(unique = true)
 	private String name;
 
 	@NotNull
@@ -72,5 +71,9 @@ public class Product {
 
 	public Map<String, BigDecimal> getPrices() {
 		return prices;
+	}
+
+	public void setPrices(Map<String, BigDecimal> prices) {
+		this.prices = prices;
 	}
 }
